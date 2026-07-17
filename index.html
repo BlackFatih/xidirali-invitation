@@ -407,7 +407,7 @@ $('#mapBtn').href = CONFIG.xarita;
 (function(){
   let ism = '';
   const seg = decodeURIComponent(location.pathname.split('/').filter(Boolean).pop() || '');
-  if (seg && !/\.\w+$/.test(seg) && seg.toLowerCase() !== 'toy-taklifnoma') ism = seg;
+  if (seg && !/\.\w+$/.test(seg) && !['toy-taklifnoma','xidirali-'].includes(seg.toLowerCase())) ism = seg;
   const q = new URLSearchParams(location.search).get('ism');
   if (q) ism = q;
   if (!ism && location.hash.length > 1) ism = decodeURIComponent(location.hash.slice(1));
